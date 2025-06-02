@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --font-poppins: 'Poppins', sans-serif;
+  --font-sans: var(--font-poppins);
+
+  /* Core Brand Colors Only (Zinc will come from Tailwind) */
+  --color-white: #ffffff;
+  --color-primary: #ffcd74;
+  --color-secondary: #9c6ace;
+  --color-accent: #f8d18c;
+  --color-teal: #2d6c6a;
+  --color-blue: #295aa3;
+  --color-highlight: #f5c13d;
+  --color-orange: #FFA700;
+  --color-blue-dark: #1A2B43;
+  --color-night: #070B11;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+@layer utilities {
+  .lead {
+    @apply text-2xl leading-8 lg:text-3xl lg:leading-9 text-zinc-100/90 font-light;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 80s linear infinite;
+}
+
+.hover\:paused:hover {
+  animation-play-state: paused;
+}
